@@ -1,18 +1,12 @@
-class MainSection extends HTMLElement
-{
-    // style = null;
+class MainSection extends HTMLElement {
+  constructor() {
+    super();
+    this._style = document.createElement("style");
+    this._mainImg = this.getAttribute("mainImg");
+  }
 
-    constructor()
-    {
-        super();
-        this._style = document.createElement("style");
-        this._mainImg = this.getAttribute("mainImg");
-    }
-
-    updateStyle()
-    {
-        this._style.textContent = 
-        `
+  updateStyle() {
+    this._style.textContent = `
         ${this.localName} {
             display: flex;
             flex-direction: column;
@@ -95,18 +89,16 @@ class MainSection extends HTMLElement
                 gap: 20px;
             }
         }
-        `
-    }
+        `;
+  }
 
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render()
-    {
-        this.updateStyle();
-        this.innerHTML = 
-        `
+  render() {
+    this.updateStyle();
+    this.innerHTML = `
             ${this._style.outerHTML}
             <div class="main-text-box">
                 <h1>Bringing you the best for every bites</h1>
@@ -120,7 +112,7 @@ class MainSection extends HTMLElement
             <div class="blank-space">
             </div>
         `;
-    }
+  }
 }
 
 customElements.define("main-section", MainSection);

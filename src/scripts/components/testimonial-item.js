@@ -1,34 +1,18 @@
 class TestimonialItem extends HTMLElement {
-    _style = null;
+  constructor() {
+    super();
+    this._style = document.createElement("style");
+    this._profileImg = this.getAttribute("profileImg");
+    this._profileName = this.getAttribute("profileName");
+    this._profileJob = this.getAttribute("profileJob");
+  }
 
-  
-    constructor() {
-      super();
-      this._style = document.createElement("style");
-      this._profileImg = this.getAttribute("profileImg");
-      this._profileName = this.getAttribute("profileName");
-      this._profileJob = this.getAttribute("profileJob");
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        if (name === "profileimg") {
-            this._profileImg = newValue; // Update the image URL
-            this.render(); // Re-render when the attribute changes
-        }
-    }
-  
-    setRecommendedItem(value) {
-      // this._recommendedItem = value;
-      this.render();
-    }
-  
-    connectedCallback() {
-      this.render();
-    }
-  
-    updateStyle() {
-      this._style.textContent = 
-        `
+  updateStyle() {
+    this._style.textContent = `
             ${this.localName}
             {
               display: flex;
@@ -85,13 +69,13 @@ class TestimonialItem extends HTMLElement {
                 }
             }
         `;
-    }
-  
-    render() {
-      this.setAttribute("class", "box-leaf-two shadow-box");
-  
-      this.updateStyle();
-      this.innerHTML = `
+  }
+
+  render() {
+    this.setAttribute("class", "box-leaf-two shadow-box");
+
+    this.updateStyle();
+    this.innerHTML = `
               ${this._style.outerHTML}
               <div class="testimonial-header">
                 <!-- <div class="testimonial-photo"></div> -->
@@ -106,8 +90,7 @@ class TestimonialItem extends HTMLElement {
               <h3 class="testimonial-name">${this._profileName}</h3>
               <span>${this._profileJob}</span>
           `;
-    }
   }
-  
-  customElements.define("testimonial-item", TestimonialItem);
-  
+}
+
+customElements.define("testimonial-item", TestimonialItem);

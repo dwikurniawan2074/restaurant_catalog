@@ -75,7 +75,7 @@ class Appbar extends HTMLElement {
             transform: translate(0,0);
             background-color: unset;
             width: 100%;
-            height: 100px;
+            height: 90px;
             position: fixed;
             background-color:#ffffff;
             z-index: 10;
@@ -88,7 +88,7 @@ class Appbar extends HTMLElement {
             align-items: center;
             justify-content: space-evenly;
             gap: 10%;
-            width: 20%;
+            width: 35%;
           }
 
           .sub-menu-bar > a{
@@ -106,6 +106,12 @@ class Appbar extends HTMLElement {
             background-color: #EA6D27 !important;
             border: unset;
             color: white;
+          }
+        }
+
+        @media screen and (min-width: 1280px) {
+          .sub-menu-bar{
+            width: 20%;
           }
         }
     `;

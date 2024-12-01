@@ -1,6 +1,4 @@
 class RecommendedList extends HTMLElement {
-//   _style = null;
-
   constructor() {
     super();
 
@@ -18,8 +16,7 @@ class RecommendedList extends HTMLElement {
   }
 
   updateStyle() {
-    this._style.textContent = 
-    `         
+    this._style.textContent = `         
         ${this.localName}
         {
           display: flex !important;
@@ -27,10 +24,10 @@ class RecommendedList extends HTMLElement {
           padding: 80px 20px 40px 20px;
           gap: 20px;
           justify-content: start;
-          overflow-x: auto; /* Allow horizontal scrolling */
-          scroll-behavior: smooth; /* Smooth scrolling when swiping or using scroll buttons */
-          -ms-overflow-style: none; /* Internet Explorer 10+ */
-          scrollbar-width: none; /* Firefox */
+          overflow-x: auto;
+          scroll-behavior: smooth; 
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
 
         ${this.localName}::-webkit-scrollbar {
@@ -47,7 +44,6 @@ class RecommendedList extends HTMLElement {
   }
 
   render() {
-
     this.updateStyle();
 
     this.innerHTML += `

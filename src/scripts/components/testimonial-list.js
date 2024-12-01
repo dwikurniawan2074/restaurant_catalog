@@ -1,26 +1,23 @@
 class TestimonialList extends HTMLElement {
-    //   _style = null;
-    
-      constructor() {
-        super();
-    
-        this._style = document.createElement("style");
-      }
-    
-      setRecommendedList(value) {
-        this._setRecommendedList = value;
-    
-        this.render();
-      }
-    
-      connectedCallback() {
-        this.render();
-        this.append(this._style); 
-      }
-    
-      updateStyle() {
-        this._style.textContent = 
-        `         
+  constructor() {
+    super();
+
+    this._style = document.createElement("style");
+  }
+
+  setRecommendedList(value) {
+    this._setRecommendedList = value;
+
+    this.render();
+  }
+
+  connectedCallback() {
+    this.render();
+    this.append(this._style);
+  }
+
+  updateStyle() {
+    this._style.textContent = `         
           ${this.localName}
           {
             display: flex;
@@ -41,18 +38,17 @@ class TestimonialList extends HTMLElement {
             }
           }
         `;
-      }
-    
-      render() {
-        this.updateStyle();
-    
-        this.innerHTML += `
+  }
+
+  render() {
+    this.updateStyle();
+
+    this.innerHTML += `
           <testimonial-item profileImg="./images/people_1.jpeg" profileName="John Doe" profileJob="CEO TechStark"></testimonial-item>
           <testimonial-item profileImg="./images/people_2.jpg" profileName="Pevita Pearce" profileJob="Freelance Novelist Writer"></testimonial-item>
         `;
-        this.append(this._style);
-      }
-    }
-    
-    customElements.define("testimonial-list", TestimonialList);
-    
+    this.append(this._style);
+  }
+}
+
+customElements.define("testimonial-list", TestimonialList);
