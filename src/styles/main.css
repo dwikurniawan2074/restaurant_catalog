@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+ 
+body {
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  margin: unset;
+  display: flex;
+  flex-direction: column;
+}
+
+
+html, body, main {
+  height: 100%;
+  width: 100%;
+}
+
+img {
+  display: block;
+}
+
+button {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.primary-color-button{
+  background-color: #EA6D27 !important;
+  border: unset;
+  color: white;
+}
+
+button:hover{
+  transform: scale(1.1);
+}
+
+button:active{
+  transform: scale(0.9);
+}
+
+.box-leaf{
+  border-radius: 10px 5px 10px 5px;
+}
+
+.box-leaf-two{
+  border-radius: 20px 5px 20px 5px;
+}
+
+.shadow-box{
+  border: 0px solid #000000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-header-section{
+  display: flex;
+  align-items:  center;
+  padding: 0px 20px;
+  gap: 10px;
+  position: fixed;
+  background-color: #ffffff;
+  width: 100%;
+  z-index: 2;
+}
+
+.mobile-header-section > img {
+  height: 50px;
+}
+
+#hamburger {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+}
+
+.recommended-section{
+  display: block;
+  align-items: center;
+  background-color: #F2F2F2;
+  padding: 24px 20px;
+}
+
+.recommended-section > h1{
+  text-align: center;
+}
+
+.testimonial-section{
+  padding: 24px 20px;
+  text-align: center;
+  background-image: url(../public/images/background-testimonial.png);
+  background-size: cover;
+}
+
+.contact-section{
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 150px;
+  padding: 150px 20px 50px 20px;
+}
+
+.contact-section > h2{
+  padding-top: 10px;
+}
+
+.email-box{
+  background-image: url(../public/images/background-email-box.png);
+  background-size: cover;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 20px 5px 20px 5px;
+  border: 0px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* offsite position */
+  position: absolute;
+  top: -20%;
+  z-index: 0;
+}
+
+.email-box > h2 {
+  color: white;
+}
+
+.email-box > form{
+  margin-bottom: 20px;
+}
+
+form > .email-input-container{
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 20px 5px 20px 5px;
+  border: 0px;
+}
+
+form > .email-input-container > input{
+  /* min-width: 250px; */
+  height: 44px;
+  border: 0px;
+  width: 80%;
+}
+
+form > .email-input-container > button{
+  border: 0px solid;
+  padding: 0px 20px;
+  margin-left: 10px;
+}
+
+.social-media-list{
+  display: flex;
+  flex-direction: row;
+}
+
+.social-media-list > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
+  background-color: black;
+  color: white;
+  border: unset;
+  border-radius: 20px 5px 20px 5px;
+  width: 50px;
+  padding: 7px 5px;
+  cursor: pointer;
+}
+
+.social-media-list > a:hover{
+  position: relative;
+  bottom: -2px;
+  right: -2px;
+}
+
+recommended-list
+{
+  display: flex;
+  flex-direction: row;
+  padding: 80px 20px 40px 20px;
+  gap: 40px;
+  justify-content: start;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media screen and (min-width: 720px) {
+  .mobile-header-section {
+    display: none;
+  }
+
+  .email-box{
+    width: 50%;
+  }
+
+  recommended-list
+  {
+    justify-content: start;
+    width: 75%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main-section{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+  }
+
+  .main-text-box > .main-button-group{
+    padding: 24px 0px;
+    justify-content: start;
+  }
+}
