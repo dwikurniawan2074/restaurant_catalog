@@ -26,6 +26,23 @@ button {
   min-height: 44px;
 }
 
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  padding: 8px;
+  background-color: #EA6D27;
+  color: white;
+  z-index: 100;
+  padding: 15px;
+  border: 1px solid black;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid yellow;
+}
+
 .primary-color-button{
   background-color: #EA6D27 !important;
   border: unset;
