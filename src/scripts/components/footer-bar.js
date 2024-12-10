@@ -1,7 +1,7 @@
 class FooterBar extends HTMLElement {
   constructor() {
     super();
-    this._style = document.createElement("style");
+    this._style = document.createElement('style');
   }
 
   updateStyle() {
@@ -33,4 +33,4 @@ class FooterBar extends HTMLElement {
   }
 }
 
-customElements.define("footer-bar", FooterBar);
+customElements.define('footer-bar', FooterBar);

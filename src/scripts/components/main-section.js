@@ -1,8 +1,8 @@
 class MainSection extends HTMLElement {
   constructor() {
     super();
-    this._style = document.createElement("style");
-    this._mainImg = this.getAttribute("mainImg");
+    this._style = document.createElement('style');
+    this._mainImg = this.getAttribute('mainImg');
   }
 
   updateStyle() {
@@ -115,4 +115,4 @@ class MainSection extends HTMLElement {
   }
 }
 
-customElements.define("main-section", MainSection);
+customElements.define('main-section', MainSection);

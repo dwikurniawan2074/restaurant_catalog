@@ -2,7 +2,7 @@ class RecommendedList extends HTMLElement {
   constructor() {
     super();
 
-    this._style = document.createElement("style");
+    this._style = document.createElement('style');
   }
 
   setRecommendedList(value) {
@@ -56,4 +56,4 @@ class RecommendedList extends HTMLElement {
   }
 }
 
-customElements.define("recommended-list", RecommendedList);
+customElements.define('recommended-list', RecommendedList);

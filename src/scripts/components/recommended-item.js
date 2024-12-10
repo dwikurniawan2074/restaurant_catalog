@@ -2,16 +2,16 @@ class RecommendedItem extends HTMLElement {
   _style = null;
   _restaurant = {
     id: 0,
-    name: "restaurantName",
-    description: "restaurantDescription",
-    pictureId: "restaurantPictureId",
-    city: "restaurantCity",
+    name: 'restaurantName',
+    description: 'restaurantDescription',
+    pictureId: 'restaurantPictureId',
+    city: 'restaurantCity',
     rating: 0,
   };
 
   constructor() {
     super();
-    this._style = document.createElement("style");
+    this._style = document.createElement('style');
   }
 
   setRecommendedItem(value) {
@@ -21,26 +21,26 @@ class RecommendedItem extends HTMLElement {
 
   setRatingValue(rating) {
     if (Number.isInteger(rating)) {
-      let tmp = "";
+      let tmp = '';
       for (let i = rating; i > 0; i--) {
         if (i == 1) {
-          tmp += "★";
+          tmp += '★';
         } else {
-          tmp += "★ ";
+          tmp += '★ ';
         }
       }
       return tmp;
     } else {
-      let tmp = "";
-      let wholeStars = Math.floor(rating);
-      let decimalPart = rating - wholeStars;
+      let tmp = '';
+      const wholeStars = Math.floor(rating);
+      const decimalPart = rating - wholeStars;
 
       for (let i = 0; i < wholeStars; i++) {
-        tmp += "★ ";
+        tmp += '★ ';
       }
 
       if (decimalPart >= 0.5) {
-        tmp += "☆";
+        tmp += '☆';
       }
 
       return tmp.trim();
@@ -122,25 +122,25 @@ class RecommendedItem extends HTMLElement {
   }
 
   render() {
-    this.setAttribute("class", "box-leaf-two shadow-box");
-    this.setAttribute("data-id", this._restaurant.id);
+    this.setAttribute('class', 'box-leaf-two shadow-box');
+    this.setAttribute('data-id', this._restaurant.id);
 
     this.updateStyle();
     this.innerHTML = `
         ${this._style.outerHTML}
         <div class="recommended-header">
           <img src="${
-            this._restaurant.pictureId
-          }" class="restaurant-photo" alt="restaurant-photo"/>
+  this._restaurant.pictureId
+}" class="restaurant-photo" alt="restaurant-photo"/>
         </div>
         <h3 class="restaurant-name">${this._restaurant.name}</h3>
         <p class="restaurant-city">${this._restaurant.city}</p>
         <span class="restaurant-rating"> <span>${
-          this._restaurant.rating
-        }/5</span> ${this.setRatingValue(this._restaurant.rating)}</span>
+  this._restaurant.rating
+}/5</span> ${this.setRatingValue(this._restaurant.rating)}</span>
         <p class="restaurant-description">${this._restaurant.description}</p>
       `;
   }
 }
 
-customElements.define("recommended-item", RecommendedItem);
+customElements.define('recommended-item', RecommendedItem);

@@ -3,8 +3,8 @@ class Appbar extends HTMLElement {
 
   constructor() {
     super();
-    this._style = document.createElement("style");
-    this._logoImg = this.getAttribute("logoImg");
+    this._style = document.createElement('style');
+    this._logoImg = this.getAttribute('logoImg');
   }
 
   updateStyle() {
@@ -141,4 +141,4 @@ class Appbar extends HTMLElement {
   }
 }
 
-customElements.define("app-bar", Appbar);
+customElements.define('app-bar', Appbar);

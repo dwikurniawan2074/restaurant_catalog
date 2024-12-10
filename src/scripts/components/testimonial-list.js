@@ -2,7 +2,7 @@ class TestimonialList extends HTMLElement {
   constructor() {
     super();
 
-    this._style = document.createElement("style");
+    this._style = document.createElement('style');
   }
 
   setRecommendedList(value) {
@@ -51,4 +51,4 @@ class TestimonialList extends HTMLElement {
   }
 }
 
-customElements.define("testimonial-list", TestimonialList);
+customElements.define('testimonial-list', TestimonialList);

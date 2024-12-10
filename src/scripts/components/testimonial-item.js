@@ -1,10 +1,10 @@
 class TestimonialItem extends HTMLElement {
   constructor() {
     super();
-    this._style = document.createElement("style");
-    this._profileImg = this.getAttribute("profileImg");
-    this._profileName = this.getAttribute("profileName");
-    this._profileJob = this.getAttribute("profileJob");
+    this._style = document.createElement('style');
+    this._profileImg = this.getAttribute('profileImg');
+    this._profileName = this.getAttribute('profileName');
+    this._profileJob = this.getAttribute('profileJob');
   }
 
   connectedCallback() {
@@ -72,7 +72,7 @@ class TestimonialItem extends HTMLElement {
   }
 
   render() {
-    this.setAttribute("class", "box-leaf-two shadow-box");
+    this.setAttribute('class', 'box-leaf-two shadow-box');
 
     this.updateStyle();
     this.innerHTML = `
@@ -93,4 +93,4 @@ class TestimonialItem extends HTMLElement {
   }
 }
 
-customElements.define("testimonial-item", TestimonialItem);
+customElements.define('testimonial-item', TestimonialItem);
