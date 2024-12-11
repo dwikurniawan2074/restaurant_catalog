@@ -1,6 +1,7 @@
-import Home from "../views/pages/now-playing";
-import Favorites from "../views/pages/favorites";
-import Detail from "../views/pages/detail";
+// import Home from "../views/pages/";
+import Home from "../../scripts/view/pages/home";
+import Favorites from "../../scripts/view/pages/favorites";
+import Detail from '../../scripts/view/pages/detail';
 
 const routes = {
   "/": Home, // default page
