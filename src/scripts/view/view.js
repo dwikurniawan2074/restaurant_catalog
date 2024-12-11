@@ -5,12 +5,8 @@ const view = () => {
   const recommendedSection = document.querySelector('#recommended-section');
   const recommendedListEl = recommendedSection.querySelector('recommended-list');
 
-  // console.log(restaurantData);
-
   const showRecommendedItem = () => {
     displayResult();
-    // showRecommendedList();
-
   };
 
   const showRecommendedList = () => {
