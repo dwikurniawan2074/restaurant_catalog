@@ -5,6 +5,7 @@ class TestimonialItem extends HTMLElement {
     this._profileImg = this.getAttribute('profileImg');
     this._profileName = this.getAttribute('profileName');
     this._profileJob = this.getAttribute('profileJob');
+    this._reviewDesc = this.getAttribute('reviewDesc');
   }
 
   connectedCallback() {
@@ -82,10 +83,13 @@ class TestimonialItem extends HTMLElement {
                 <img src="${this._profileImg}" alt="testimonial-photo" class="testimonial-photo"/>
               </div>
 
-              <p class="testimonial-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="testimonial-description">
+              ${
+                this._reviewDesc 
+                  ? this._reviewDesc 
+                  : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                }
+              </p>
 
               <h3 class="testimonial-name">${this._profileName}</h3>
               <span>${this._profileJob}</span>

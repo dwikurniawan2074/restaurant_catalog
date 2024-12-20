@@ -33,13 +33,6 @@ class RecommendedList extends HTMLElement {
         ${this.localName}::-webkit-scrollbar {
           display: none;
         }
-
-        @media screen and (min-width: 1280px) {
-          ${this.localName}
-          {
-            justify-content: center;
-          }
-        }
     `;
   }
 
@@ -47,10 +40,6 @@ class RecommendedList extends HTMLElement {
     this.updateStyle();
 
     this.innerHTML += `
-      <recommended-item></recommended-item>
-      <recommended-item></recommended-item>
-      <recommended-item></recommended-item>
-      <recommended-item></recommended-item>
     `;
     this.append(this._style);
   }

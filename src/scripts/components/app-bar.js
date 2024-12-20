@@ -131,8 +131,8 @@ class Appbar extends HTMLElement {
             </div>
             
             <div class="sub-menu-bar">
-                <a href="#">Home</a>
-                <a href="#recommended-section">Favorite</a>
+                <a href="#/">Home</a>
+                <a href="#/favorites">Favorite</a>
                 <a href="#contact-section">About Us</a>
             </div>
             
