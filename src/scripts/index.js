@@ -2,6 +2,7 @@ import '../styles/main.css';
 import '../scripts/components/components.js';
 import 'regenerator-runtime';
 import App from './view/app.js';
+import swRegister from './utils/sw-register';
 
 document.addEventListener('DOMContentLoaded', () => {
   const hamburgerButtonElement = document.querySelector('#hamburger');
@@ -28,8 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('hashchange', () => {
     app.renderPage();
   });
+  
   window.addEventListener('load', () => {
     app.renderPage();
+    swRegister();
   });
 });
 

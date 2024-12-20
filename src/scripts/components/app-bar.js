@@ -34,6 +34,10 @@ class Appbar extends HTMLElement {
           gap: 10px;
         }
 
+        .app-bar-logo:hover{
+          cursor: pointer;
+        }
+
         .app-bar-logo > h1
         {
             font-weight: 900 !important;
@@ -54,7 +58,13 @@ class Appbar extends HTMLElement {
           text-decoration: none;
           font-size: 16px;
           font-weight: 700;
-          color: white;
+          // color: white;
+        }
+
+        .sub-menu-bar a:hover {
+          transform: scale(1.1);
+          color: #EA6D27;
+          filter: brightness(1.3);
         }
 
         .app-bar-button{
@@ -125,7 +135,7 @@ class Appbar extends HTMLElement {
     this.updateStyle();
     this.innerHTML = `
             ${this._style.outerHTML}
-            <div class="app-bar-logo">
+            <div class="app-bar-logo" onclick="window.location.href='/'" >
               <img src="${this._logoImg}" alt="App Bar Logo"/>
               <h1>Bitespot.</h1>
             </div>
