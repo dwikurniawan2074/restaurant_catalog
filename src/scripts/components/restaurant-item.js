@@ -1,4 +1,6 @@
-class RecommendedItem extends HTMLElement {
+import CONFIG from "../globals/config";
+
+class RestaurantItem extends HTMLElement {
   _style = null;
   _restaurant = {
     id: 0,
@@ -14,8 +16,8 @@ class RecommendedItem extends HTMLElement {
     this._style = document.createElement('style');
   }
 
-  setRecommendedItem(value) {
-    this._recommendedItem = value;
+  setRestaurantItem(value) {
+    this._restaurant = value;
     this.render();
   }
 
@@ -68,7 +70,7 @@ class RecommendedItem extends HTMLElement {
             transition: width 0.3s ease;
           }
 
-          .recommended-header{
+          .restaurant-header{
             display: inherit;
             flex-direction: row;
 
@@ -76,7 +78,7 @@ class RecommendedItem extends HTMLElement {
             top: -20%;
           }
 
-          .recommended-header > .restaurant-photo{
+          .restaurant-header > .restaurant-photo{
             border-radius: 150px;
             height: 150px;
             width: 150px;
@@ -85,6 +87,15 @@ class RecommendedItem extends HTMLElement {
           .restaurant-name {
             margin-block-end: unset;
             margin-top: 30px;
+          }
+
+          .restaurant-name > a{
+            text-decoration: none;
+            color: black;
+          }
+          
+          .restaurant-name > a:hover{
+            color: #EA6D27;
           }
 
           .restaurant-city{
@@ -128,12 +139,12 @@ class RecommendedItem extends HTMLElement {
     this.updateStyle();
     this.innerHTML = `
         ${this._style.outerHTML}
-        <div class="recommended-header">
+        <div class="restaurant-header">
           <img src="${
-  this._restaurant.pictureId
+  CONFIG.BASE_IMAGE_URL+this._restaurant.pictureId
 }" class="restaurant-photo" alt="restaurant-photo"/>
         </div>
-        <h3 class="restaurant-name">${this._restaurant.name}</h3>
+        <h3 class="restaurant-name"><a href="#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
         <p class="restaurant-city">${this._restaurant.city}</p>
         <span class="restaurant-rating"> <span>${
   this._restaurant.rating
@@ -143,4 +154,4 @@ class RecommendedItem extends HTMLElement {
   }
 }
 
-customElements.define('recommended-item', RecommendedItem);
+customElements.define('restaurant-item', RestaurantItem);

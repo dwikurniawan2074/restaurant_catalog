@@ -1,7 +1,8 @@
 import '../styles/main.css';
 import '../scripts/components/components.js';
-import view from './view/view.js';
-
+import 'regenerator-runtime';
+import App from './view/app.js';
+import swRegister from './utils/sw-register';
 
 document.addEventListener('DOMContentLoaded', () => {
   const hamburgerButtonElement = document.querySelector('#hamburger');
@@ -18,5 +19,20 @@ document.addEventListener('DOMContentLoaded', () => {
     event.stopPropagation();
   });
 
-  view();
+  // view();
+  const app = new App({
+    button: document.querySelector('#hamburger'),
+    drawer: document.querySelector('app-bar'),
+    content: document.querySelector('main'),
+  });
+  
+  window.addEventListener('hashchange', () => {
+    app.renderPage();
+  });
+  
+  window.addEventListener('load', () => {
+    app.renderPage();
+    swRegister();
+  });
 });
+
