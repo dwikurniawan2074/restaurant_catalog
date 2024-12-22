@@ -2,7 +2,7 @@ import '../styles/main.css';
 import '../scripts/components/components.js';
 import 'regenerator-runtime';
 import App from './view/app.js';
-import swRegister from './utils/sw-register';
+import swRegister from './utils/sw-register.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const hamburgerButtonElement = document.querySelector('#hamburger');
