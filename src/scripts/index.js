@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     event.stopPropagation();
   });
 
-  // view();
   const app = new App({
     button: document.querySelector('#hamburger'),
     drawer: document.querySelector('app-bar'),
