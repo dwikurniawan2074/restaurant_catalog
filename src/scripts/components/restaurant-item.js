@@ -123,6 +123,11 @@ class RestaurantItem extends HTMLElement {
             -webkit-box-orient: vertical;
           }
 
+          .fav-button{
+            margin: unset;
+            padding: unset;
+          }
+
           @media screen and (min-width: 720px) {
             ${this.localName}
             {
@@ -141,14 +146,12 @@ class RestaurantItem extends HTMLElement {
         ${this._style.outerHTML}
         <div class="restaurant-header">
           <img src="${
-  CONFIG.BASE_IMAGE_URL+this._restaurant.pictureId
-}" class="restaurant-photo" alt="restaurant-photo"/>
+              CONFIG.BASE_IMAGE_URL+this._restaurant.pictureId
+            }" class="restaurant-photo" alt="restaurant-photo"/>
         </div>
         <h3 class="restaurant-name"><a href="#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
         <p class="restaurant-city">${this._restaurant.city}</p>
-        <span class="restaurant-rating"> <span>${
-  this._restaurant.rating
-}/5</span> ${this.setRatingValue(this._restaurant.rating)}</span>
+        <span class="restaurant-rating"> <span>${this._restaurant.rating}/5</span> ${this.setRatingValue(this._restaurant.rating)}</span>
         <p class="restaurant-description">${this._restaurant.description}</p>
       `;
   }
