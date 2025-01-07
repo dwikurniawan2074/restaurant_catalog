@@ -1,14 +1,15 @@
 import UrlParser from '../../../scripts/routes/url-parser';
 import DataSource from '../../../public/data/data-source';
 import { createRestaurantDetailTemplate, createFoodTemplate, createDrinkTemplate, createReviewTemplate } from '../templates/template-creator';
+import FavButtonInitiator from '../../../scripts/utils/fav-button-initiator';
 
 const Detail = {
   async render() {
     return `
         <div id="restaurant-detail" class="restaurant-detail">
           <div class="restaurant-detail-header"></div>
-          <div id="restaurant-detail-content" class="restaurant-detail-content">
-          
+          <div id="restaurant-detail-content" class="restaurant-detail-content"></div>
+          <div id="favorite-button-container" class="favorite-button-container">
           </div>
           <div class="restaurant-detail-food">
               <h1>Foods Menu</h1>
@@ -36,8 +37,20 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await DataSource.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#restaurant-detail-content');
+    
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
-    console.log(restaurant);
+    
+    FavButtonInitiator.init({
+      favButtonContainer: document.querySelector('#favorite-button-container'),
+      restaurant: {
+        id: restaurant.id,
+        name: restaurant.name,
+        description: restaurant.description,
+        pictureId: restaurant.pictureId,
+        city: restaurant.city,
+        rating: restaurant.rating,
+      },
+    });
 
     const foods = restaurant.menus.foods;
     const foodContainer = document.querySelector('#food-container');

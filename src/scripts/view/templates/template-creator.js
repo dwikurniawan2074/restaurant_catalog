@@ -17,7 +17,6 @@ const createRestaurantDetailTemplate = (restaurant) => `
                     <h1 class="detail-restaurant-name">${restaurant.name} </h1>
                     <p class="detail-restaurant-address">${restaurant.address} </p>
                     <p class="detail-restaurant-desc">${restaurant.description}</p>
-                    <button class="shadow-box box-leaf primary-color-button"> Add to Favorites </button>
                 </div>
             </div>
             <div class="detail-content-right">
@@ -48,7 +47,15 @@ const createReviewTemplate = (review) => {
       <testimonial-item profileImg="./images/default_user.png" profileName="${review.name}" profileJob="${review.date}" reviewDesc="${review.review}"></testimonial-item>
     `.trim();
     return template.content.firstChild; 
-  };
+};
+
+const createFavoriteButtonTemplate = () => `
+    <button id="favoriteButton" class="shadow-box box-leaf primary-color-button"> Add to Favorites </button>
+`;
+ 
+const createFavoritedButtonTemplate = () => `
+    <button id="favoriteButton" class="shadow-box box-leaf primary-color-button"> Unfavorite </button>
+`;
  
 export {
     createRestaurantTemplate,
@@ -56,4 +63,6 @@ export {
     createFoodTemplate,
     createDrinkTemplate,
     createReviewTemplate,
+    createFavoriteButtonTemplate,
+    createFavoritedButtonTemplate
 };

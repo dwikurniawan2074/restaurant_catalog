@@ -1,5 +1,5 @@
 import { openDB } from 'idb';
-import CONFIG from '../globals/config';
+import CONFIG from '../../scripts/globals/config';
  
 const { DATABASE_NAME, DATABASE_VERSION, OBJECT_STORE_NAME } = CONFIG;
  
@@ -24,4 +24,4 @@ const FavoriteRestaurantIdb = {
     },
 };
 
-export default FavoriteMovieIdb;
+export default FavoriteRestaurantIdb;

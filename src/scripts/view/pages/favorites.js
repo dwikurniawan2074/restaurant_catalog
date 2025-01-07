@@ -1,6 +1,7 @@
 import UrlParser from '../../../scripts/routes/url-parser';
 import DataSource from '../../../public/data/data-source';
 import { createRestaurantTemplate } from '../templates/template-creator';
+import FavoriteRestaurantIdb from '../../../public/data/favorite-restaurant-idb';
 
 const Favorites = {
   async render() {
@@ -21,10 +22,11 @@ const Favorites = {
   },
   async afterRender() {
     // Fungsi ini akan dipanggil setelah render()
-    const restaurants = await DataSource.restaurantList();
+    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     const favoritesContainer = document.querySelector('.favorites-container');
 
     restaurants.forEach((restaurant) => {
+      // favoritesContainer.innerHTML += createRestaurantTemplate(restaurant);
       const restaurantElement = createRestaurantTemplate(restaurant);
       favoritesContainer.appendChild(restaurantElement);
     });
