@@ -2,11 +2,11 @@ import CONFIG from '../../globals/config';
 import '../../components/restaurant-item';
 import '../../components/food-item';
 import '../../components/testimonial-item';
- 
+
 const createRestaurantTemplate = (restaurant) => {
-    const restaurantItem = document.createElement('restaurant-item');
-    restaurantItem.setRestaurantItem(restaurant);
-    return restaurantItem;
+  const restaurantItem = document.createElement('restaurant-item');
+  restaurantItem.setRestaurantItem(restaurant);
+  return restaurantItem;
 };
 
 const createRestaurantDetailTemplate = (restaurant) => `
@@ -30,39 +30,39 @@ const createRestaurantDetailTemplate = (restaurant) => `
 `;
 
 const createFoodTemplate = (food) => {
-    const foodItem = document.createElement('food-item');
-    foodItem.setFoodItem(food);
-    return foodItem;
+  const foodItem = document.createElement('food-item');
+  foodItem.setFoodItem(food);
+  return foodItem;
 };
- 
+
 const createDrinkTemplate = (drink) => {
-    const drinkItem = document.createElement('drink-item');
-    drinkItem.setDrinkItem(drink);
-    return drinkItem;
+  const drinkItem = document.createElement('drink-item');
+  drinkItem.setDrinkItem(drink);
+  return drinkItem;
 };
 
 const createReviewTemplate = (review) => {
-    const template = document.createElement('template');
-    template.innerHTML = `
+  const template = document.createElement('template');
+  template.innerHTML = `
       <testimonial-item profileImg="./images/default_user.png" profileName="${review.name}" profileJob="${review.date}" reviewDesc="${review.review}"></testimonial-item>
     `.trim();
-    return template.content.firstChild; 
+  return template.content.firstChild;
 };
 
 const createFavoriteButtonTemplate = () => `
     <button id="favoriteButton" class="shadow-box box-leaf primary-color-button"> Add to Favorites </button>
 `;
- 
+
 const createFavoritedButtonTemplate = () => `
     <button id="favoriteButton" class="shadow-box box-leaf primary-color-button"> Unfavorite </button>
 `;
- 
+
 export {
-    createRestaurantTemplate,
-    createRestaurantDetailTemplate,
-    createFoodTemplate,
-    createDrinkTemplate,
-    createReviewTemplate,
-    createFavoriteButtonTemplate,
-    createFavoritedButtonTemplate
+  createRestaurantTemplate,
+  createRestaurantDetailTemplate,
+  createFoodTemplate,
+  createDrinkTemplate,
+  createReviewTemplate,
+  createFavoriteButtonTemplate,
+  createFavoritedButtonTemplate
 };

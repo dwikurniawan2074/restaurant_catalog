@@ -1,4 +1,4 @@
-import CONFIG from "../globals/config";
+import CONFIG from '../globals/config';
 
 class RestaurantItem extends HTMLElement {
   _style = null;
@@ -146,8 +146,8 @@ class RestaurantItem extends HTMLElement {
         ${this._style.outerHTML}
         <div class="restaurant-header">
           <img src="${
-              CONFIG.BASE_IMAGE_URL+this._restaurant.pictureId
-            }" class="restaurant-photo" alt="restaurant-photo"/>
+  CONFIG.BASE_IMAGE_URL+this._restaurant.pictureId
+}" class="restaurant-photo" alt="restaurant-photo"/>
         </div>
         <h3 class="restaurant-name"><a href="#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
         <p class="restaurant-city">${this._restaurant.city}</p>

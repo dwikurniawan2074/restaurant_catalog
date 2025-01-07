@@ -85,10 +85,10 @@ class TestimonialItem extends HTMLElement {
 
               <p class="testimonial-description">
               ${
-                this._reviewDesc 
-                  ? this._reviewDesc 
-                  : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-                }
+  this._reviewDesc
+    ? this._reviewDesc
+    : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+}
               </p>
 
               <h3 class="testimonial-name">${this._profileName}</h3>

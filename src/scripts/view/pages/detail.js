@@ -37,9 +37,9 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await DataSource.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#restaurant-detail-content');
-    
+
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
-    
+
     FavButtonInitiator.init({
       favButtonContainer: document.querySelector('#favorite-button-container'),
       restaurant: {
@@ -73,7 +73,7 @@ const Detail = {
       console.log(reviewElement);
       reviewsContainer.appendChild(reviewElement);
     });
-    
+
   },
 };
 export default Detail;

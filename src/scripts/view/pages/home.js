@@ -1,4 +1,4 @@
-import DataSource from "../../../public/data/data-source";
+import DataSource from '../../../public/data/data-source';
 import { createRestaurantTemplate } from '../templates/template-creator';
 
 const Home = {
