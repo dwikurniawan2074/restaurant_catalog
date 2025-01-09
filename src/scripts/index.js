@@ -9,20 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const appBar = document.querySelector('app-bar');
   const mainElement = document.querySelector('main');
 
-  hamburgerButtonElement.addEventListener('click', (event) => {
-    appBar.classList.toggle('open');
-    event.stopPropagation();
-  });
-
-  mainElement.addEventListener('click', (event) => {
-    appBar.classList.remove('open');
-    event.stopPropagation();
-  });
-
   const app = new App({
-    button: document.querySelector('#hamburger'),
-    drawer: document.querySelector('app-bar'),
-    content: document.querySelector('main'),
+    button: hamburgerButtonElement,
+    drawer: appBar,
+    content: mainElement,
   });
 
   window.addEventListener('hashchange', () => {

@@ -1,5 +1,3 @@
-import UrlParser from '../../../scripts/routes/url-parser';
-import DataSource from '../../../public/data/data-source';
 import { createRestaurantTemplate } from '../templates/template-creator';
 import FavoriteRestaurantIdb from '../../../public/data/favorite-restaurant-idb';
 

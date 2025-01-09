@@ -86,17 +86,32 @@ class RestaurantItem extends HTMLElement {
 
           .restaurant-name {
             margin-block-end: unset;
-            margin-top: 30px;
+            margin-top: unset;
           }
 
           .restaurant-name > a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
             color: black;
+            min-height: 45px;
+            min-width: 44px;
+            padding: unset;
           }
           
           .restaurant-name > a:hover{
             color: #EA6D27;
           }
+
+          .touch-target {
+            display: inline-block; 
+            min-height: 44px;      
+            min-width: 44px;       
+            padding: 10px;         
+            text-align: center;    
+            line-height: 1.5;
+          }          
 
           .restaurant-city{
             margin: unset;
@@ -149,7 +164,7 @@ class RestaurantItem extends HTMLElement {
   CONFIG.BASE_IMAGE_URL+this._restaurant.pictureId
 }" class="restaurant-photo" alt="restaurant-photo"/>
         </div>
-        <h3 class="restaurant-name"><a href="#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
+        <h3 class="restaurant-name"><a href="#/detail/${this._restaurant.id}" class="touch-target">${this._restaurant.name}</a></h3>
         <p class="restaurant-city">${this._restaurant.city}</p>
         <span class="restaurant-rating"> <span>${this._restaurant.rating}/5</span> ${this.setRatingValue(this._restaurant.rating)}</span>
         <p class="restaurant-description">${this._restaurant.description}</p>

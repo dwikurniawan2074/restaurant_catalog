@@ -1,6 +1,6 @@
 import UrlParser from '../../../scripts/routes/url-parser';
 import DataSource from '../../../public/data/data-source';
-import { createRestaurantDetailTemplate, createFoodTemplate, createDrinkTemplate, createReviewTemplate } from '../templates/template-creator';
+import { createRestaurantDetailTemplate, createRestaurantDetailNoData, createFoodTemplate, createDrinkTemplate, createReviewTemplate } from '../templates/template-creator';
 import FavButtonInitiator from '../../../scripts/utils/fav-button-initiator';
 
 const Detail = {
@@ -33,46 +33,52 @@ const Detail = {
       `;
   },
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await DataSource.detailRestaurant(url.id);
     const restaurantContainer = document.querySelector('#restaurant-detail-content');
 
-    restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
+    try {
+      const restaurant = await DataSource.detailRestaurant(url.id);
 
-    FavButtonInitiator.init({
-      favButtonContainer: document.querySelector('#favorite-button-container'),
-      restaurant: {
-        id: restaurant.id,
-        name: restaurant.name,
-        description: restaurant.description,
-        pictureId: restaurant.pictureId,
-        city: restaurant.city,
-        rating: restaurant.rating,
-      },
-    });
+      restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
-    const foods = restaurant.menus.foods;
-    const foodContainer = document.querySelector('#food-container');
-    foods.forEach((food) => {
-      const foodElement = createFoodTemplate(food);
-      foodContainer.appendChild(foodElement);
-    });
+      FavButtonInitiator.init({
+        favButtonContainer: document.querySelector('#favorite-button-container'),
+        restaurant: {
+          id: restaurant.id,
+          name: restaurant.name,
+          description: restaurant.description,
+          pictureId: restaurant.pictureId,
+          city: restaurant.city,
+          rating: restaurant.rating,
+        },
+      });
 
-    const drinks = restaurant.menus.drinks;
-    const drinksContainer = document.querySelector('#drinks-container');
-    drinks.forEach((drink) => {
-      const drinkElement = createDrinkTemplate(drink);
-      drinksContainer.appendChild(drinkElement);
-    });
+      const foods = restaurant.menus.foods;
+      const foodContainer = document.querySelector('#food-container');
+      foods.forEach((food) => {
+        const foodElement = createFoodTemplate(food);
+        foodContainer.appendChild(foodElement);
+      });
 
-    const reviews = restaurant.customerReviews;
-    const reviewsContainer = document.querySelector('#reviews-container');
-    reviews.forEach((review) => {
-      const reviewElement = createReviewTemplate(review);
-      console.log(reviewElement);
-      reviewsContainer.appendChild(reviewElement);
-    });
+      const drinks = restaurant.menus.drinks;
+      const drinksContainer = document.querySelector('#drinks-container');
+      drinks.forEach((drink) => {
+        const drinkElement = createDrinkTemplate(drink);
+        drinksContainer.appendChild(drinkElement);
+      });
+
+      const reviews = restaurant.customerReviews;
+      const reviewsContainer = document.querySelector('#reviews-container');
+      reviews.forEach((review) => {
+        const reviewElement = createReviewTemplate(review);
+        console.log(reviewElement);
+        reviewsContainer.appendChild(reviewElement);
+      });
+    } catch (error) {
+      console.log(error);
+      restaurantContainer.innerHTML = createRestaurantDetailNoData();
+    }
+
 
   },
 };

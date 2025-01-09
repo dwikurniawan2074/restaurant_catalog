@@ -29,6 +29,16 @@ const createRestaurantDetailTemplate = (restaurant) => `
     
 `;
 
+const createRestaurantDetailNoData = () => `
+    
+        <div class="detail-content-container">
+            <div class="detail-content-left">
+                <h1 style="color: white;">Sorry, it's offline there are no data yet :)</h1>
+            </div>
+        </div>
+    
+`;
+
 const createFoodTemplate = (food) => {
   const foodItem = document.createElement('food-item');
   foodItem.setFoodItem(food);
@@ -60,9 +70,10 @@ const createFavoritedButtonTemplate = () => `
 export {
   createRestaurantTemplate,
   createRestaurantDetailTemplate,
+  createRestaurantDetailNoData,
   createFoodTemplate,
   createDrinkTemplate,
   createReviewTemplate,
   createFavoriteButtonTemplate,
-  createFavoritedButtonTemplate
+  createFavoritedButtonTemplate,
 };
