@@ -10,7 +10,7 @@ const Favorites = {
             <h1>Favorite Restaurants</h1>
           </div>
 
-          <div class="restaurant-favorites-content">
+          <div id="restaurant-favorites-content" class="restaurant-favorites-content">
             <div class="favorites-container">
             </div>
           </div>

@@ -85,9 +85,14 @@ button:active{
 }
 
 #hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 30px;
   text-decoration: none;
   color: black;
+  min-height: 44px;
+  min-width: 44px;
 }
 
 .recommended-section{
@@ -188,6 +193,8 @@ form > .email-input-container > button{
   width: 50px;
   padding: 7px 5px;
   cursor: pointer;
+  min-width: 46px;
+  min-height: 46px;
 }
 
 .social-media-list > a:hover{
@@ -309,7 +316,6 @@ recommended-list
   background-size: cover;
 }
 
-
 .food-container, .drinks-container, .reviews-container{
   display: flex;
   flex-direction: row;
@@ -373,6 +379,7 @@ recommended-list
   row-gap: 100px; /* Adds vertical spacing */
   column-gap: 20px; 
   margin: 0 auto;
+  place-items: center; 
 }
 /* end of favorites styling page */
 

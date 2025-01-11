@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburgerButtonElement = document.querySelector('#hamburger');
   const appBar = document.querySelector('app-bar');
   const mainElement = document.querySelector('main');
+  
 
   const app = new App({
     button: hamburgerButtonElement,

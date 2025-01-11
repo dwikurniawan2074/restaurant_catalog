@@ -11,7 +11,7 @@ const createRestaurantTemplate = (restaurant) => {
 
 const createRestaurantDetailTemplate = (restaurant) => `
     
-        <div class="detail-content-container">
+        <div id="detail-content-container" class="detail-content-container">
             <div class="detail-content-left">
                 <div class="content-left-container">
                     <h1 class="detail-restaurant-name">${restaurant.name} </h1>
@@ -31,7 +31,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
 const createRestaurantDetailNoData = () => `
     
-        <div class="detail-content-container">
+        <div id="detail-content-container" class="detail-content-container">
             <div class="detail-content-left">
                 <h1 style="color: white;">Sorry, it's offline there are no data yet :)</h1>
             </div>
