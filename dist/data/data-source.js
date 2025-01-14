@@ -1,1 +1,0 @@
-import API_ENDPOINT from"../../scripts/globals/api-endpoint";class DataSource{static async restaurantList(){const t=await fetch(API_ENDPOINT.RESTAURANT_LIST),a=await t.json();return console.log(a),a.restaurants}static async detailRestaurant(t){const a=await fetch(API_ENDPOINT.DETAIL(t));return(await a.json()).restaurant}}export default DataSource;
