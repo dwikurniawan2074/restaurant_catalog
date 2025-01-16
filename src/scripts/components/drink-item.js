@@ -2,12 +2,12 @@ class DrinkItem extends HTMLElement {
   _style = null;
   _drink = {
     id: 0,
-    name: "drinkName",
+    name: 'drinkName',
   };
 
   constructor() {
     super();
-    this._style = document.createElement("style");
+    this._style = document.createElement('style');
   }
 
   setDrinkItem(value) {
@@ -80,8 +80,8 @@ class DrinkItem extends HTMLElement {
   }
 
   render() {
-    this.setAttribute("class", "box-leaf-two shadow-box");
-    this.setAttribute("data-id", this._drink.id);
+    this.setAttribute('class', 'box-leaf-two shadow-box');
+    this.setAttribute('data-id', this._drink.id);
 
     this.updateStyle();
     this.innerHTML = `
@@ -95,4 +95,4 @@ class DrinkItem extends HTMLElement {
   }
 }
 
-customElements.define("drink-item", DrinkItem);
+customElements.define('drink-item', DrinkItem);

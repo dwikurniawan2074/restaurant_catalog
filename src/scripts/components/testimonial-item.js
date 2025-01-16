@@ -79,16 +79,15 @@ class TestimonialItem extends HTMLElement {
     this.innerHTML = `
               ${this._style.outerHTML}
               <div class="testimonial-header">
-                <!-- <div class="testimonial-photo"></div> -->
                 <img src="${this._profileImg}" alt="testimonial-photo" class="testimonial-photo"/>
               </div>
 
               <p class="testimonial-description">
               ${
-                this._reviewDesc 
-                  ? this._reviewDesc 
-                  : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-                }
+  this._reviewDesc
+    ? this._reviewDesc
+    : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+}
               </p>
 
               <h3 class="testimonial-name">${this._profileName}</h3>

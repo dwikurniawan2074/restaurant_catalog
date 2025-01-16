@@ -1,5 +1,5 @@
 class Appbar extends HTMLElement {
-  // style = null;
+  style = null;
 
   constructor() {
     super();
@@ -24,7 +24,7 @@ class Appbar extends HTMLElement {
         }
 
         ${this.localName}.open {
-          transform: translate(0,0)
+          transform: translate(0,0);
         }
 
         .app-bar-logo{
@@ -91,6 +91,10 @@ class Appbar extends HTMLElement {
             z-index: 10;
             transform: translate(-50%, 0); 
             left: 50%;
+          }
+
+          ${this.localName}.open {
+            transition: transform 0.3s ease-in-out;
           }
 
           .sub-menu-bar{

@@ -1,10 +1,10 @@
-import DataSource from "../../../public/data/data-source";
+import DataSource from '../../../public/data/data-source';
 import { createRestaurantTemplate } from '../templates/template-creator';
 
 const Home = {
   async render() {
     return `
-        <main-section id="main-section" mainImg="./images/heros/hero-image_2.jpg"></main-section>
+        <main-section id="main-section" ></main-section>
 
         <div id="recommended-section" class="recommended-section">
           <h1>Recommended</h1>
@@ -43,7 +43,6 @@ const Home = {
   },
 
   async afterRender() {
-
     const restaurants = await DataSource.restaurantList();
     const recommendedList = document.querySelector('recommended-list');
 
@@ -51,7 +50,6 @@ const Home = {
       const restaurantElement = createRestaurantTemplate(restaurant);
       recommendedList.appendChild(restaurantElement);
     });
-
   },
 };
 export default Home;

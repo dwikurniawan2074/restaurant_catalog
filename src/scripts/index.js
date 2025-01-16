@@ -1,6 +1,8 @@
 import '../styles/main.css';
 import '../scripts/components/components.js';
 import 'regenerator-runtime';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import App from './view/app.js';
 import swRegister from './utils/sw-register.js';
 
@@ -9,27 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const appBar = document.querySelector('app-bar');
   const mainElement = document.querySelector('main');
 
-  hamburgerButtonElement.addEventListener('click', (event) => {
-    appBar.classList.toggle('open');
-    event.stopPropagation();
-  });
 
-  mainElement.addEventListener('click', (event) => {
-    appBar.classList.remove('open');
-    event.stopPropagation();
-  });
-
-  // view();
   const app = new App({
-    button: document.querySelector('#hamburger'),
-    drawer: document.querySelector('app-bar'),
-    content: document.querySelector('main'),
+    button: hamburgerButtonElement,
+    drawer: appBar,
+    content: mainElement,
   });
-  
+
   window.addEventListener('hashchange', () => {
     app.renderPage();
   });
-  
+
   window.addEventListener('load', () => {
     app.renderPage();
     swRegister();
