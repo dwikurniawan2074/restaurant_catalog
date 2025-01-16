@@ -160,7 +160,7 @@ class RestaurantItem extends HTMLElement {
     this.innerHTML = `
         ${this._style.outerHTML}
         <div class="restaurant-header">
-          <img src="${
+          <img src="../../images/default_restaurant.png" data-src="${
   CONFIG.BASE_IMAGE_URL+this._restaurant.pictureId
 }" class="restaurant-photo lazyload" alt="restaurant-photo"/>
         </div>
