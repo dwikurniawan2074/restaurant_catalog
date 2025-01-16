@@ -79,7 +79,6 @@ class TestimonialItem extends HTMLElement {
     this.innerHTML = `
               ${this._style.outerHTML}
               <div class="testimonial-header">
-                <!-- <div class="testimonial-photo"></div> -->
                 <img src="${this._profileImg}" alt="testimonial-photo" class="testimonial-photo"/>
               </div>
 

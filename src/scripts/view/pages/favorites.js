@@ -23,11 +23,16 @@ const Favorites = {
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     const favoritesContainer = document.querySelector('.favorites-container');
 
-    restaurants.forEach((restaurant) => {
-      // favoritesContainer.innerHTML += createRestaurantTemplate(restaurant);
-      const restaurantElement = createRestaurantTemplate(restaurant);
-      favoritesContainer.appendChild(restaurantElement);
-    });
+    if (restaurants.length === 0) {
+      favoritesContainer.innerHTML = '<p class="restaurant-item__not__found">No Restaurants.</p>';
+      favoritesContainer.style.display = 'unset';
+    } else {
+      restaurants.forEach((restaurant) => {
+        // favoritesContainer.innerHTML += createRestaurantTemplate(restaurant);
+        const restaurantElement = createRestaurantTemplate(restaurant);
+        favoritesContainer.appendChild(restaurantElement);
+      });
+    }
   },
 };
 export default Favorites;

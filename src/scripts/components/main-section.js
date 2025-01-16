@@ -2,7 +2,7 @@ class MainSection extends HTMLElement {
   constructor() {
     super();
     this._style = document.createElement('style');
-    this._mainImg = this.getAttribute('mainImg');
+    // this._mainImg = this.getAttribute('mainImg');
   }
 
   updateStyle() {
@@ -18,7 +18,7 @@ class MainSection extends HTMLElement {
 
             background: 
                 linear-gradient(to top, rgba(234, 109, 39, 0.8), rgba(255, 126, 95, 0.1)), 
-                url(${this._mainImg});
+                url('./images/hero-image_2-small.jpg');
             background-size: cover;
         }
         
@@ -69,7 +69,7 @@ class MainSection extends HTMLElement {
                 padding: 200px 20px;
                 background: 
                     linear-gradient(to right, rgba(234, 109, 39, 0.8), rgba(255, 126, 95, 0.1)), 
-                    url(${this._mainImg});
+                    url('./images/hero-image_2-large.jpg'); 
                 background-size: cover;
             }
 

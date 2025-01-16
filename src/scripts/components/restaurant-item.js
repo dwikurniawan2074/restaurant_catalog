@@ -162,7 +162,7 @@ class RestaurantItem extends HTMLElement {
         <div class="restaurant-header">
           <img src="${
   CONFIG.BASE_IMAGE_URL+this._restaurant.pictureId
-}" class="restaurant-photo" alt="restaurant-photo"/>
+}" class="restaurant-photo lazyload" alt="restaurant-photo"/>
         </div>
         <h3 class="restaurant-name"><a href="#/detail/${this._restaurant.id}" class="touch-target">${this._restaurant.name}</a></h3>
         <p class="restaurant-city">${this._restaurant.city}</p>

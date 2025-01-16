@@ -1,6 +1,8 @@
 import '../styles/main.css';
 import '../scripts/components/components.js';
 import 'regenerator-runtime';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import App from './view/app.js';
 import swRegister from './utils/sw-register.js';
 

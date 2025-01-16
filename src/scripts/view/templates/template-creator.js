@@ -60,11 +60,11 @@ const createReviewTemplate = (review) => {
 };
 
 const createFavoriteButtonTemplate = () => `
-    <button id="favoriteButton" class="shadow-box box-leaf primary-color-button"> Add to Favorites </button>
+    <button id="favoriteButton" class="shadow-box box-leaf primary-color-button" aria-label="favorite this restaurant"> Add to Favorites </button>
 `;
 
 const createFavoritedButtonTemplate = () => `
-    <button id="favoriteButton" class="shadow-box box-leaf primary-color-button"> Unfavorite </button>
+    <button id="favoriteButton" class="shadow-box box-leaf primary-color-button" aria-label="unfavorite this restaurant"> Unfavorite </button>
 `;
 
 export {
