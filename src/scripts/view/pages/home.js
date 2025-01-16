@@ -1,5 +1,5 @@
-import DataSource from "../../../public/data/data-source";
-import { createRestaurantTemplate } from "../templates/template-creator";
+import DataSource from '../../../public/data/data-source';
+import { createRestaurantTemplate } from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -44,7 +44,7 @@ const Home = {
 
   async afterRender() {
     const restaurants = await DataSource.restaurantList();
-    const recommendedList = document.querySelector("recommended-list");
+    const recommendedList = document.querySelector('recommended-list');
 
     restaurants.forEach((restaurant) => {
       const restaurantElement = createRestaurantTemplate(restaurant);
